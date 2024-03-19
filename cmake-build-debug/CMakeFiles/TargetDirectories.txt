@@ -1,0 +1,3 @@
+/Users/nikitaannenkov/CLionProjects/OSHW1/cmake-build-debug/CMakeFiles/OSHW1.dir
+/Users/nikitaannenkov/CLionProjects/OSHW1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nikitaannenkov/CLionProjects/OSHW1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

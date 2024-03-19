@@ -1,0 +1,5 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/nikitaannenkov/CLionProjects/OSHW1 -B /Users/nikitaannenkov/CLionProjects/OSHW1/cmake-build-debug
+-- Configuring done
+CMake Error: CMake can not determine linker language for target: OSHW1
+-- Generating done
+CMake Generate step failed.  Build files cannot be regenerated correctly.
