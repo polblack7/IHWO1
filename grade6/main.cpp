@@ -243,39 +243,21 @@ int main(int argc, char *argv[])
     char buffer2[5000];
 
 
-    pid_t pid = fork();
-
-    if (pid < 0)
-    {
-        printf("Error creating process\n");
-        return -1;
-    }
-
+    int pid = fork();
 
     if (pid == -1) {
         printf("Incorrect fork");
         exit(-1);
     } else if (pid == 0) {
-        //Если ребенок, записывает в файл
-
-        writing(fdwrite, buffer1, argv[3]);
+        
+        resultGetting(fdwrite, fdread1, fdread2, buffer1);
 
     } else {
-        pid_t reader_pid = fork();
+        
+        reader(fdread1, buffer1, argv[1]);
+        reader(fdread2, buffer2, argv[2]);
+        writing(fdwrite, buffer1, argv[3]);
 
-        if (reader_pid == -1) {
-            printf("Incorrect fork");
-            exit(-1);
-        } else if (reader_pid == 0) {
-            //Если ребенок, обрабатывает строку
-            resultGetting(fdwrite, fdread1, fdread2, buffer1);
-
-        } else {
-            //Если родитель, читает файл
-            reader(fdread1, buffer1, argv[1]);
-            reader(fdread2, buffer2, argv[2]);
-
-        }
     }
     return 0;
 }

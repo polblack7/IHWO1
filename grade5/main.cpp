@@ -272,7 +272,7 @@ int main(int argc, char *argv[])
         printf("Incorrect fork");
         exit(-1);
     } else if (pid == 0) {
-        //Если ребенок, записывает в файл
+        
         writing(write, buffer1, argv[3]);
 
 
@@ -283,14 +283,14 @@ int main(int argc, char *argv[])
             printf("Incorrect fork");
             exit(-1);
         } else if (reader_pid == 0) {
-            //Если ребенок, обрабатывает строку
+            
 
             resultGetting(write, read1, read2, buffer1);
 
 
         } else {
 
-            //Если родитель, читает файл
+            
             reader(read1, read2, buffer1, buffer2, argv[1], argv[2]);
 
 
